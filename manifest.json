@@ -1,7 +1,7 @@
 {
     "short_name": "Diagnostics",
     "name": "Is your device healthy?",
-    "start_url": "/src/index.html",
+    "start_url": "/index.html",
     "theme_color": "#F0F2FB",
     "orientation": "portrait",
     "icons": [{

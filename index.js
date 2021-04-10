@@ -1,13 +1,16 @@
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js');
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    });
 }
 
-if (window.location.protocol === 'http:') {
-    const requireHTTPS = document.getElementById('requireHTTPS');
-    const link = requireHTTPS.querySelector('a');
-    link.href = window.location.href.replace('http://', 'https://');
-    requireHTTPS.classList.remove('hidden');
-}
+
 
 const butInstall = document.getElementById("Install");
 const divInstall = document.getElementById("promotion");

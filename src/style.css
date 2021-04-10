@@ -34,3 +34,7 @@ h1 {
     font-family: 'Roboto Mono', monospace;
     font-weight: bolder;
 }
+
+.hidden {
+    visibility: hidden;
+}

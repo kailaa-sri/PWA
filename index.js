@@ -18,7 +18,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
     // Stash the event so it can be triggered later.
     window.deferredPrompt = event;
     // Remove the 'hidden' class from the install button container
-    divInstall.style.visibility = "visible";
+
 });
 
 butInstall.addEventListener('click', async() => {

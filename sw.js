@@ -6,7 +6,11 @@ self.addEventListener('install', function(event) {
         '/src/style.css',
         './images'
     ];
-
-
-    return cache.addAll(urlsToCache);
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+        .then(function(cache) {
+            console.log('Opened cache');
+            return cache.addAll(urlsToCache);
+        })
+    );
 });

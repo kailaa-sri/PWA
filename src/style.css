@@ -41,9 +41,12 @@ h1 {
 }
 
 #promotion {
-    background-color: grey;
+    background-color: rgb(221, 218, 218);
     text-align: center;
     padding: 2%;
     width: 500px;
+    text-decoration: none;
+    border-bottom: 0px;
+    color: grey;
     margin: 0 auto;
 }

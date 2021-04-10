@@ -12,8 +12,6 @@ if ('serviceWorker' in navigator) {
 
 
 
-const butInstall = document.getElementById("Install");
-const divInstall = document.getElementById("promotion");
 window.addEventListener('beforeinstallprompt', (event) => {
     console.log('👍', 'beforeinstallprompt', event);
     // Stash the event so it can be triggered later.
@@ -23,7 +21,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
     document.getElementById("promotion").classList.remove("hidden");
 });
 
-butInstall.addEventListener('click', async() => {
+document.getElementById("Install").addEventListener('click', async() => {
     console.log('👍', 'butInstall-clicked');
     const promptEvent = window.deferredPrompt;
     if (!promptEvent) {

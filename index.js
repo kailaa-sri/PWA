@@ -10,7 +10,12 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-
+window.addEventListener('appinstalled', (event) => {
+    console.log('👍', 'appinstalled', event);
+    document.getElementById("promotion").classList.add("hidden");
+    // Clear the deferredPrompt so it can be garbage collected
+    window.deferredPrompt = null;
+});
 
 window.addEventListener('beforeinstallprompt', (event) => {
     console.log('👍', 'beforeinstallprompt', event);

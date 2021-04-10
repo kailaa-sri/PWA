@@ -39,3 +39,9 @@ butInstall.addEventListener('click', async() => {
     // Hide the install button.
     divInstall.classList.add("hidden");
 });
+
+window.addEventListener('appinstalled', (event) => {
+    console.log('👍', 'appinstalled', event);
+    // Clear the deferredPrompt so it can be garbage collected
+    window.deferredPrompt = null;
+});

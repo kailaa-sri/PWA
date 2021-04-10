@@ -31,3 +31,7 @@ btnAdd.addEventListener('click', function(event) {
         deferredPrompt = null;
     });
 });
+
+window.addEventListener('appinstalled', function(e) {
+    app.logEvent('a2hs', 'installed');
+});

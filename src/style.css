@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&family=Roboto+Slab:wght@300&display=swap');
+h2 {
+    display: inline;
+    border-bottom: 2px solid rgb(154, 154, 202);
+    font-size: larger;
+    margin-right: 1%;
+    font-family: 'Roboto Slab', serif;
+}
+
+h2:hover {
+    border-bottom: 3px solid rgb(83, 83, 117);
+    font-size: x-large;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    background-color: white;
+    position: relative;
+    bottom: 0px;
+}
+
+body {
+    background-color: rgb(240, 240, 250);
+    margin: 0px;
+}
+
+h1 {
+    align-content: center;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+}

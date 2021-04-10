@@ -4,6 +4,7 @@ h2 {
     border-bottom: 2px solid rgb(85, 37, 146);
     font-size: larger;
     margin-right: 1%;
+    color: rgb(85, 37, 146);
     font-family: 'Roboto Slab', serif;
 }
 
@@ -44,4 +45,5 @@ h1 {
     text-align: center;
     padding: 2%;
     width: 500px;
+    margin: 0 auto;
 }

@@ -50,6 +50,14 @@ self.addEventListener('fetch', function(event) {
         })());
     }
 });
+
+
+window.addEventListener('appinstalled', (event) => {
+    console.log('👍', 'appinstalled', event);
+    // Clear the deferredPrompt so it can be garbage collected
+    window.deferredPrompt = null;
+});
+
 /*
 
 

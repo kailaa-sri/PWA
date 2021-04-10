@@ -41,15 +41,13 @@ h1 {
 }
 
 #promotion {
-    background-color: rgb(221, 218, 218);
+    background-color: rgb(230, 230, 230);
     text-align: center;
     padding: 2%;
     width: 500px;
     margin: 0 auto;
-}
-
-#promotion h2 {
     text-decoration: none;
     border-bottom: 0px;
     color: grey;
+    font-family: 'Roboto Slab', serif;
 }

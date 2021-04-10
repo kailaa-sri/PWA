@@ -19,7 +19,8 @@ window.addEventListener('beforeinstallprompt', (event) => {
     // Stash the event so it can be triggered later.
     window.deferredPrompt = event;
     // Remove the 'hidden' class from the install button container
-    divInstall.classList.remove("hidden");
+
+    document.getElementById("promotion").classList.remove("hidden");
 });
 
 butInstall.addEventListener('click', async() => {
@@ -38,7 +39,8 @@ butInstall.addEventListener('click', async() => {
     // prompt() can only be called once.
     window.deferredPrompt = null;
     // Hide the install button.
-    divInstall.classList.add("hidden");
+
+    document.getElementById("promotion").classList.add("hidden");
 });
 
 window.addEventListener('appinstalled', (event) => {

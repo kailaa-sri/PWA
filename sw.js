@@ -14,3 +14,20 @@ self.addEventListener('install', function(event) {
         })
     );
 });
+var deferredPrompt;
+window.addEventListener('beforeinstallprompt', function(event) {
+    event.preventDefault();
+    deferredPrompt = event;
+    btnAdd.style.display = 'block';
+
+});
+btnAdd.addEventListener('click', function(event) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(function(choiceres) {
+        if (choiceres == 'accepted') {
+            console.log("User Accepted add to home screen request");
+
+        }
+        deferredPrompt = null;
+    });
+});

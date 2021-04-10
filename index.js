@@ -43,6 +43,7 @@ document.getElementById("Install").addEventListener('click', async() => {
 
 window.addEventListener('appinstalled', (event) => {
     console.log('👍', 'appinstalled', event);
+    document.getElementById("promotion").classList.add("hidden");
     // Clear the deferredPrompt so it can be garbage collected
     window.deferredPrompt = null;
 });

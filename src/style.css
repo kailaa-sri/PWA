@@ -45,8 +45,11 @@ h1 {
     text-align: center;
     padding: 2%;
     width: 500px;
+    margin: 0 auto;
+}
+
+#promotion h2 {
     text-decoration: none;
     border-bottom: 0px;
     color: grey;
-    margin: 0 auto;
 }

@@ -25,7 +25,7 @@ self.addEventListener('fetch', function(event) {
 // Initialize deferredPrompt for use later to show browser install prompt.
 let deferredPrompt;
 
-window.addEventListener('beforeinstallprompt', (e) => {
+self.addEventListener('beforeinstallprompt', (e) => {
     // Prevent the mini-infobar from appearing on mobile
     e.preventDefault();
     // Stash the event so it can be triggered later.
@@ -36,7 +36,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
     console.log(`'beforeinstallprompt' event was fired.`);
 });
 
-
+var buttonInstall = document.getElementById('Install');
 buttonInstall.addEventListener('click', async() => {
     // Hide the app provided install promotion
     hideInstallPromotion();
@@ -50,7 +50,17 @@ buttonInstall.addEventListener('click', async() => {
     deferredPrompt = null;
 });
 
-window.addEventListener('appinstalled', () => {
+function showInstallPromotion() {
+    var promotion = document.getElementById("promo");
+    promotion.style.visibility = "visible";
+}
+
+function hideInstallPromotion() {
+    var promotion = document.getElementById("promo");
+    promotion.style.visibility = "hidden";
+}
+
+self.addEventListener('appinstalled', () => {
     // Hide the app-provided install promotion
     hideInstallPromotion();
     // Clear the deferredPrompt so it can be garbage collected

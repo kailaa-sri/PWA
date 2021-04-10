@@ -10,6 +10,9 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+
+var butInstall = document.getElementById("Install");
+var divInstall = document.getElementById("promo");
 window.addEventListener('beforeinstallprompt', (event) => {
     console.log('👍', 'beforeinstallprompt', event);
     // Stash the event so it can be triggered later.
@@ -18,8 +21,6 @@ window.addEventListener('beforeinstallprompt', (event) => {
     divInstall.style.visibility = "visible";
 });
 
-var butInstall = document.getElementById("Install");
-var divInstall = document.getElementById("promo");
 butInstall.addEventListener('click', async() => {
     console.log('👍', 'butInstall-clicked');
     const promptEvent = window.deferredPrompt;

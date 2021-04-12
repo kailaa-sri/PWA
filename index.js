@@ -50,36 +50,36 @@ window.onload = function() {
 
     }
 
+    var editorExtensionId = "libpmdgfhliebpigepnppcjgpdnphcpm";
+    var dataset = [];
+    // Make a simple request:
+
+    setInterval(function() { getcpuinfo(); }, 30000);
+
+    function getcpuinfo() {
+        chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" },
+            function(response) {
+                if (!response.reply)
+                    console.log("no messgae reply ");
+                else {
+                    console.log(response.reply);
+                    dataset.push(response.reply);
+                    Displaygraph(dataset);
+
+                }
+            });
+    }
+
+    function Displaygraph(cpu) {
+
+
+        d3.select("div")
+            .data(cpu)
+            .enter()
+            .append("div")
+            .attr("class", "bar")
+            .style("height", (d) => (d * 100 + "px"))
+
+    }
+
 }
-
-var editorExtensionId = "libpmdgfhliebpigepnppcjgpdnphcpm";
-var dataset = [];
-// Make a simple request:
-
-function getcpuinfo() {
-    chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" },
-        function(response) {
-            if (!response.reply)
-                console.log("no messgae reply ");
-            else {
-                console.log(response.reply);
-                dataset.push(response.reply);
-                Displaygraph(dataset);
-
-            }
-        });
-}
-
-function Displaygraph(cpu) {
-
-
-    d3.select("div")
-        .data(cpu)
-        .enter()
-        .append("div")
-        .attr("class", "bar")
-        .style("height", (d) => (d * 100 + "px"))
-
-}
-
-setInterval(function() { getcpuinfo(); }, 30000);

@@ -74,6 +74,6 @@ function Displaygraph(cpu) {
         .enter()
         .append("div")
         .attr("class", "bar")
-        .style("height", (d) => ((d / 10000000000) * 5 + "px"))
+        .style("height", (d) => ((d % 100) + "px"))
 
 }

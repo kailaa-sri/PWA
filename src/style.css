@@ -54,8 +54,7 @@ h1 {
 
 button {
     background-color: white;
-    border-radius: 20%;
-    border-color: white;
+    border-radius: 2%;
     box-shadow: 6px 2px 1px grey;
     color: grey;
     font-family: 'Roboto Slab', serif;

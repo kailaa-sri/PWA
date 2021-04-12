@@ -53,7 +53,7 @@ window.onload = function() {
 }
 
 var editorExtensionId = "libpmdgfhliebpigepnppcjgpdnphcpm";
-
+var dataset = [];
 // Make a simple request:
 chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" },
     function(response) {
@@ -61,7 +61,8 @@ chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" }
             console.log("no messgae reply ");
         else {
             console.log(response.reply);
-            Displaygraph(response.reply);
+            dataset.push(response.reply);
+            Displaygraph(dataset);
 
         }
     });
@@ -74,6 +75,6 @@ function Displaygraph(cpu) {
         .enter()
         .append("div")
         .attr("class", "bar")
-        .style("height", (d) => (d * 400 + "px"))
+        .style("height", (d) => (d * 100 + "px"))
 
 }

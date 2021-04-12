@@ -28,9 +28,6 @@ if (installed == 0) {
     });
 
 
-
-
-
     document.getElementById("Install").addEventListener('click', async() => {
         console.log('👍', 'butInstall-clicked');
         const promptEvent = window.deferredPrompt;

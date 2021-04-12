@@ -54,6 +54,15 @@ h1 {
 
 button {
     background-color: white;
-    border-radius: 2%;
+    border-radius: 20%;
+    border-color: white;
     box-shadow: 6px 2px 1px grey;
+    color: grey;
+    font-family: 'Roboto Slab', serif;
+    font-size: large;
+    font-weight: bold;
+}
+
+button:hover {
+    box-shadow: 0px 0px 0px blue;
 }

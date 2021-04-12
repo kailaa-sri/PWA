@@ -82,6 +82,15 @@ window.onload = function() {
             .style("height", (d) => (d * 100 + "px"))
 
     }
+
+    const labels = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+    ];
     const data = {
         labels: labels,
         datasets: [{
@@ -96,14 +105,7 @@ window.onload = function() {
         data,
         options: {}
     };
-    const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-    ];
+
 
     var myChart = new Chart(
         document.getElementById('myChart'),

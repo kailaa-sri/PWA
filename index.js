@@ -55,17 +55,20 @@ window.onload = function() {
 var editorExtensionId = "libpmdgfhliebpigepnppcjgpdnphcpm";
 var dataset = [];
 // Make a simple request:
-chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" },
-    function(response) {
-        if (!response.reply)
-            console.log("no messgae reply ");
-        else {
-            console.log(response.reply);
-            dataset.push(response.reply);
-            Displaygraph(dataset);
 
-        }
-    });
+function getcpuinfo() {
+    chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" },
+        function(response) {
+            if (!response.reply)
+                console.log("no messgae reply ");
+            else {
+                console.log(response.reply);
+                dataset.push(response.reply);
+                Displaygraph(dataset);
+
+            }
+        });
+}
 
 function Displaygraph(cpu) {
 
@@ -78,3 +81,5 @@ function Displaygraph(cpu) {
         .style("height", (d) => (d * 100 + "px"))
 
 }
+
+setInterval(function() { getcpuinfo(); }, 30000);

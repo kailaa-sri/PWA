@@ -14,12 +14,7 @@ self.addEventListener('install', function(event) {
     self.skipWaiting();
 });
 
-var extid = "libpmdgfhliebpigepnppcjgpdnphcpm";
-chrome.runtime.sendMessage(extid, { openUrlInEditor: url },
-    function(response) {
-        if (!response.success)
-            handleError(url);
-    });
+
 
 self.addEventListener('activate', (event) => {
     console.log('[ServiceWorker] Activate');
@@ -57,3 +52,13 @@ self.addEventListener('fetch', function(event) {
         })());
     }
 });
+
+
+var extid = "libpmdgfhliebpigepnppcjgpdnphcpm";
+chrome.runtime.sendMessage(extid, { openUrlInEditor: url },
+    function(response) {
+        if (!response.success) {
+            console.log("Error");
+            handleError(url);
+        }
+    });

@@ -60,6 +60,7 @@ button {
     font-family: 'Roboto Slab', serif;
     font-size: large;
     font-weight: bold;
+    text-align: center;
 }
 
 button:hover {

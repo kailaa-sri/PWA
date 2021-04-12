@@ -51,3 +51,7 @@ h1 {
     color: grey;
     font-family: 'Roboto Slab', serif;
 }
+
+button {
+    background-color: cadetblue;
+}

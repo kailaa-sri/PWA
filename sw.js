@@ -52,13 +52,9 @@ self.addEventListener('fetch', function(event) {
         })());
     }
 });
-
-
-var extid = "libpmdgfhliebpigepnppcjgpdnphcpm";
-chrome.runtime.sendMessage(extid, { openUrlInEditor: url },
-    function(response) {
-        if (!response.success) {
-            console.log("Error");
-            handleError(url);
-        }
+chrome.runtime.onMessageExternal.addListener(
+    function(request, sender, sendResponse) {
+        // don't allow this web page access
+        if (request.openUrlInEditor)
+            openUrl(request.openUrlInEditor);
     });

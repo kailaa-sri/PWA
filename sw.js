@@ -52,13 +52,3 @@ self.addEventListener('fetch', function(event) {
         })());
     }
 });
-
-
-var extid = "libpmdgfhliebpigepnppcjgpdnphcpm";
-chrome.runtime.sendMessage(extid, { openUrlInEditor: url },
-    function(response) {
-        if (!response.success) {
-            console.log("Error");
-            handleError(url);
-        }
-    });

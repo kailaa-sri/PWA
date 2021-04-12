@@ -26,23 +26,26 @@ if (installed == 0) {
 
         document.getElementById("promotion").classList.remove("hidden");
     });
-    document.getElementById("Install").addEventListener('click', async() => {
-        console.log('👍', 'butInstall-clicked');
-        const promptEvent = window.deferredPrompt;
-        if (!promptEvent) {
-            // The deferred prompt isn't available.
-            return;
-        }
-        // Show the install prompt.
-        promptEvent.prompt();
-        // Log the result
-        const result = await promptEvent.userChoice;
-        console.log('👍', 'userChoice', result);
-        // Reset the deferred prompt variable, since
-        // prompt() can only be called once.
-        window.deferredPrompt = null;
-        // Hide the install button.
+    var inst = document.getElementById("Install");
+    if (inst) {
+        inst.addEventListener('click', async() => {
+            console.log('👍', 'butInstall-clicked');
+            const promptEvent = window.deferredPrompt;
+            if (!promptEvent) {
+                // The deferred prompt isn't available.
+                return;
+            }
+            // Show the install prompt.
+            promptEvent.prompt();
+            // Log the result
+            const result = await promptEvent.userChoice;
+            console.log('👍', 'userChoice', result);
+            // Reset the deferred prompt variable, since
+            // prompt() can only be called once.
+            window.deferredPrompt = null;
+            // Hide the install button.
 
-        document.getElementById("promotion").classList.add("hidden");
-    });
+            document.getElementById("promotion").classList.add("hidden");
+        });
+    }
 }

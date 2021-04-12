@@ -51,7 +51,7 @@ window.onload = function() {
     }
 
     var editorExtensionId = "libpmdgfhliebpigepnppcjgpdnphcpm";
-    var dataset = [];
+    var dataset = 0;
     // Make a simple request:
 
     getcpuinfo();
@@ -64,7 +64,7 @@ window.onload = function() {
                     console.log("no messgae reply ");
                 else {
                     console.log(response.reply);
-                    dataset.push(response.reply);
+                    dataset = response.reply;
                     Displaygraph(dataset);
 
                 }

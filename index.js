@@ -75,7 +75,6 @@ window.onload = function() {
 
 
         d3.select("div")
-            .data(cpu)
             .append("div")
             .attr("class", "bar")
             .style("height", (d) => (d * 100 + "px"))

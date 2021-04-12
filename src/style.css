@@ -53,5 +53,7 @@ h1 {
 }
 
 button {
-    background-color: cadetblue;
+    background-color: white;
+    border-radius: 2%;
+    box-shadow: 6px 2px 1px grey;
 }

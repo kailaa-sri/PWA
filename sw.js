@@ -15,7 +15,7 @@ self.addEventListener('install', function(event) {
 });
 
 var extid = "libpmdgfhliebpigepnppcjgpdnphcpm";
-chrome.runtime.sendMessage(editorExtensionId, { openUrlInEditor: url },
+chrome.runtime.sendMessage(extid, { openUrlInEditor: url },
     function(response) {
         if (!response.success)
             handleError(url);

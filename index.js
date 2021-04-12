@@ -61,5 +61,19 @@ chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" }
             console.log("no messgae reply ");
         else {
             console.log(response.reply);
+            Displaygraph(response.reply);
+
         }
     });
+
+function Displaygraph(cpu) {
+
+
+    d3.select("body").selectAll("div")
+        .data(cpu)
+        .enter()
+        .append("div")
+        .attr("class", "bar")
+        .style("height", (d) => (d / 10000 + "px"))
+
+}

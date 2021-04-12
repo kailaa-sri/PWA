@@ -32,7 +32,7 @@ self.addEventListener('activate', (event) => {
     // Tell the active service worker to take control of the page immediately.
     self.clients.claim();
 });
-chrome.runtime.onConnect.addListener(function(port) {
+chrome.runtime.connect.addListener(function(port) {
     console.assert(port.name == "knockknock");
     port.onMessage.addListener(function(msg) {
         if (msg.joke == "Knock knock")

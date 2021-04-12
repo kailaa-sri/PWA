@@ -14,7 +14,7 @@ window.onload = function() {
     window.addEventListener('appinstalled', (event) => {
         console.log('👍', 'appinstalled', event);
         installed = 1;
-        document.getElementById("promotion").classList.add("hidden");
+        //document.getElementById("promotion").classList.add("hidden");
         // Clear the deferredPrompt so it can be garbage collected
         window.deferredPrompt = null;
     });

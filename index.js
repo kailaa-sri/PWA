@@ -54,6 +54,7 @@ window.onload = function() {
     var dataset = [];
     // Make a simple request:
 
+    getcpuinfo();
     setInterval(function() { getcpuinfo(); }, 30000);
 
     function getcpuinfo() {

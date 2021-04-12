@@ -69,7 +69,6 @@ button:hover {
 
 .bar {
     width: 25px;
-    height: 100px;
     display: inline-block;
-    background-color: blue;
+    background-color: rgb(63, 216, 109);
 }

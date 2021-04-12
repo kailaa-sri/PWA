@@ -46,7 +46,7 @@ window.onload = function() {
             // Hide the install button.
             document.getElementById("promotion").classList.add("hidden");
         });
-        // document.getElementById("promotion").classList.add("hidden");
+        document.getElementById("promotion").classList.add("hidden");
 
     }
 

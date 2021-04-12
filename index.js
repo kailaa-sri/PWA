@@ -49,9 +49,9 @@ if (installed == 0) {
     });
 }
 
-chrome.runtime.onMessageExternal.addListener(
+/*chrome.runtime.onMessageExternal.addListener(
     function(request, sender, sendResponse) {
         // don't allow this web page access
         if (request.openUrlInEditor)
             openUrl(request.openUrlInEditor);
-    });
+    });*/

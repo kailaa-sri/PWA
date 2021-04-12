@@ -23,6 +23,9 @@ self.addEventListener('activate', (event) => {
         // See https://developers.google.com/web/updates/2017/02/navigation-preload
         if ('navigationPreload' in self.registration) {
             await self.registration.navigationPreload.enable();
+        } else {
+            console.log("Preload failed");
+            return;
         }
     })());
 
@@ -52,11 +55,3 @@ self.addEventListener('fetch', function(event) {
         })());
     }
 });
-
-chrome.runtime.onMessageExternal.addListener(
-    function(request, sender, sendResponse) {
-        if (sender.url == blocklistedWebsite)
-            return; // don't allow this web page access
-        if (request.openUrlInEditor)
-            openUrl(request.openUrlInEditor);
-    });

@@ -69,7 +69,7 @@ chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" }
 function Displaygraph(cpu) {
 
 
-    d3.select("body").selectAll("div")
+    d3.select("div")
         .data(cpu)
         .enter()
         .append("div")

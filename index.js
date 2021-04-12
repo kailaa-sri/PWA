@@ -1,33 +1,33 @@
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+window.onload = function() {
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js').then(function(registration) {
 
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }, function(err) {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
 
-            console.log('ServiceWorker registration failed: ', err);
+                console.log('ServiceWorker registration failed: ', err);
+            });
         });
+    }
+    var installed = 0;
+    window.addEventListener('appinstalled', (event) => {
+        console.log('👍', 'appinstalled', event);
+        installed = 1;
+        document.getElementById("promotion").classList.add("hidden");
+        // Clear the deferredPrompt so it can be garbage collected
+        window.deferredPrompt = null;
     });
-}
-var installed = 0;
-window.addEventListener('appinstalled', (event) => {
-    console.log('👍', 'appinstalled', event);
-    installed = 1;
-    document.getElementById("promotion").classList.add("hidden");
-    // Clear the deferredPrompt so it can be garbage collected
-    window.deferredPrompt = null;
-});
-if (installed == 0) {
-    window.addEventListener('beforeinstallprompt', (event) => {
-        console.log('👍', 'beforeinstallprompt', event);
-        // Stash the event so it can be triggered later.
-        window.deferredPrompt = event;
-        // Remove the 'hidden' class from the install button container
+    if (installed == 0) {
+        /*window.addEventListener('beforeinstallprompt', (event) => {
+            console.log('👍', 'beforeinstallprompt', event);
+            // Stash the event so it can be triggered later.
+            window.deferredPrompt = event;
+            // Remove the 'hidden' class from the install button container
 
-        document.getElementById("promotion").classList.remove("hidden");
-    });
-    var inst = document.getElementById("Install");
-    if (inst) {
+            document.getElementById("promotion").classList.remove("hidden");
+        });
+        var inst = document.getElementById("Install");
         inst.addEventListener('click', async() => {
             console.log('👍', 'butInstall-clicked');
             const promptEvent = window.deferredPrompt;
@@ -44,8 +44,9 @@ if (installed == 0) {
             // prompt() can only be called once.
             window.deferredPrompt = null;
             // Hide the install button.
-
             document.getElementById("promotion").classList.add("hidden");
-        });
+        });*/
+        // document.getElementById("promotion").classList.add("hidden");
+
     }
 }

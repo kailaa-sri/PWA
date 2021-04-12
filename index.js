@@ -64,7 +64,7 @@ window.onload = function() {
                     console.log("no messgae reply ");
                 else {
                     console.log(response.reply);
-                    dataset = response.reply;
+                    dataset.push(response.reply);
                     Displaygraph(dataset);
 
                 }
@@ -76,6 +76,7 @@ window.onload = function() {
 
         d3.select("div")
             .data(cpu)
+            .enter()
             .append("div")
             .attr("class", "bar")
             .style("height", (d) => (d * 100 + "px"))

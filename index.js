@@ -19,7 +19,7 @@ window.onload = function() {
         window.deferredPrompt = null;
     });
     if (installed == 0) {
-        /*window.addEventListener('beforeinstallprompt', (event) => {
+        window.addEventListener('beforeinstallprompt', (event) => {
             console.log('👍', 'beforeinstallprompt', event);
             // Stash the event so it can be triggered later.
             window.deferredPrompt = event;
@@ -45,7 +45,7 @@ window.onload = function() {
             window.deferredPrompt = null;
             // Hide the install button.
             document.getElementById("promotion").classList.add("hidden");
-        });*/
+        });
         // document.getElementById("promotion").classList.add("hidden");
 
     }

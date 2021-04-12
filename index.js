@@ -51,3 +51,15 @@ window.onload = function() {
     }
 
 }
+
+var editorExtensionId = "libpmdgfhliebpigepnppcjgpdnphcpm";
+
+// Make a simple request:
+chrome.runtime.sendMessage(editorExtensionId, { openUrlInEditor: url },
+    function(response) {
+        if (!response.success)
+            console.log("no messgae reply ");
+        else {
+            console.log("Response received:" + response);
+        }
+    });

@@ -14,6 +14,13 @@ self.addEventListener('install', function(event) {
     self.skipWaiting();
 });
 
+var extid = "libpmdgfhliebpigepnppcjgpdnphcpm";
+chrome.runtime.sendMessage(editorExtensionId, { openUrlInEditor: url },
+    function(response) {
+        if (!response.success)
+            handleError(url);
+    });
+
 self.addEventListener('activate', (event) => {
     console.log('[ServiceWorker] Activate');
     event.waitUntil((async() => {

@@ -28,6 +28,9 @@ if (installed == 0) {
     });
 
 
+
+
+
     document.getElementById("Install").addEventListener('click', async() => {
         console.log('👍', 'butInstall-clicked');
         const promptEvent = window.deferredPrompt;
@@ -48,10 +51,3 @@ if (installed == 0) {
         document.getElementById("promotion").classList.add("hidden");
     });
 }
-
-/*chrome.runtime.onMessageExternal.addListener(
-    function(request, sender, sendResponse) {
-        // don't allow this web page access
-        if (request.openUrlInEditor)
-            openUrl(request.openUrlInEditor);
-    });*/

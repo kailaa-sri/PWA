@@ -57,9 +57,9 @@ var editorExtensionId = "libpmdgfhliebpigepnppcjgpdnphcpm";
 // Make a simple request:
 chrome.runtime.sendMessage(editorExtensionId, { msg: "hello" },
     function(response) {
-        if (!response.success)
+        if (!response.msg)
             console.log("no messgae reply ");
         else {
-            console.log("Response received:" + response);
+            console.log(response.msg);
         }
     });

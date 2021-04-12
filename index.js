@@ -49,4 +49,5 @@ window.onload = function() {
         // document.getElementById("promotion").classList.add("hidden");
 
     }
+
 }

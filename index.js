@@ -55,7 +55,7 @@ window.onload = function() {
 var editorExtensionId = "libpmdgfhliebpigepnppcjgpdnphcpm";
 
 // Make a simple request:
-chrome.runtime.sendMessage(editorExtensionId, { openUrlInEditor: url },
+chrome.runtime.sendMessage(editorExtensionId, { msg: "hello" },
     function(response) {
         if (!response.success)
             console.log("no messgae reply ");

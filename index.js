@@ -69,11 +69,11 @@ chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" }
 function Displaygraph(cpu) {
 
 
-    d3.select("body").selectAll("div")
+    d3.select(".barchart").selectAll("div")
         .data(cpu)
         .enter()
         .append("div")
         .attr("class", "bar")
-        .style("height", (d) => (d / 10000000000 * 2 + "px")).text("num")
+        .style("height", (d) => (d / 10000000000 * 2 + "px"))
 
 }

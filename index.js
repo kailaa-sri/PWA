@@ -55,11 +55,11 @@ window.onload = function() {
 var editorExtensionId = "libpmdgfhliebpigepnppcjgpdnphcpm";
 
 // Make a simple request:
-chrome.runtime.sendMessage(editorExtensionId, { msg: "hello" },
+chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" },
     function(response) {
         if (!response.reply)
             console.log("no messgae reply ");
         else {
-            console.log(response.msg);
+            console.log(response.reply);
         }
     });

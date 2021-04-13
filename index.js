@@ -75,24 +75,25 @@ window.onload = function() {
 
         document.querySelectorAll('.bar').forEach(function(a) {
             a.remove();
-        })
+        });
+        var min = dataset[0];
+        var max = dataset[0];
+        dataset.forEach(element => {
+            if (element < min) { min = element; }
+            if (element > max) { max = element; }
+        });
+
         dataset.forEach(element => {
 
-            element = normalize(element, Math.max(dataset), Math.min(dataset));
+
+            element = ((val - min) / (max - min)) + 1;
+            //normalize(element, Math.max(dataset), Math.min(dataset));
         });
         d3.select("h4")
             .data(dataset)
             .enter()
-            .append("div").attr('class', 'bar').style("height", (d) => (d + "px")).style("margin", 1);
+            .append("div").attr('class', 'bar').style("height", (d) => (d * 222 + "px")).style("margin", 1);
 
     }
 
-}
-
-function normalize(val, max, min) {
-    console.log(val);
-    console.log(min);
-    console.log(max);
-    console.log(((val - min) / (max - min)) + 1);
-    return ((val - min) / (max - min)) + 1;
 }

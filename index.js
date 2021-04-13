@@ -58,11 +58,12 @@ window.onload = function() {
     setInterval(function() { getcpuinfo(); }, 2000);
 
     function getcpuinfo() {
-        if (chrome.runtime.lastError) {
-            console.error(chrome.runtime.lastError);
-        } else {
-            chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" },
-                function(response) {
+
+        chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" },
+            function(response) {
+                if (chrome.runtime.lastError) {
+                    console.error(chrome.runtime.lastError);
+                } else {
                     if (!response)
                         console.log("no messgae reply ");
                     else {
@@ -74,8 +75,9 @@ window.onload = function() {
                         }
 
                     }
-                });
-        }
+                }
+            });
+
     }
 
 

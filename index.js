@@ -98,7 +98,7 @@ window.onload = function() {
         dataset.forEach(element => {
 
 
-            element = element - min;
+            element = element - dataset.min / dataset.max - dataset.min;
             console.log("min:" + min + "element:" + element);
             //normalize(element, Math.max(dataset), Math.min(dataset));
         });

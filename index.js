@@ -72,9 +72,9 @@ window.onload = function() {
     }
 
     function Displaygraph(dataset) {
-        /*dataset.forEach(element => {
+        dataset.forEach(element => {
             element = normalize(element, 100, 50);
-        });*/
+        });
         d3.select("h4")
             .data(dataset)
             .enter()
@@ -84,4 +84,4 @@ window.onload = function() {
 
 }
 
-//function normalize(val, max, min) { return (val - min) / (max - min); }
+function normalize(val, max, min) { return (val - min) / (max - min); }

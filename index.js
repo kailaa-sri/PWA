@@ -55,7 +55,7 @@ window.onload = function() {
     // Make a simple request:
 
     getcpuinfo();
-    setInterval(function() { getcpuinfo(); }, 20000);
+    setInterval(function() { getcpuinfo(); }, 2000);
 
     function getcpuinfo() {
         chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" },
@@ -79,7 +79,7 @@ window.onload = function() {
         d3.select("h4")
             .data(dataset)
             .enter()
-            .append("div").attr('class', 'bar').style("height", (d) => d * 55).style("margin", 1);
+            .append("div").attr('class', 'bar').style("height", (d) => d * 44.888888).style("margin", 1);
 
     }
 

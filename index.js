@@ -73,10 +73,11 @@ window.onload = function() {
 
                     }
                 });
-        } catch (error) {
-            console.log(error);
+        } catch (err) {
+
         }
     }
+
 
     function Displaygraph(dataset) {
 

@@ -70,7 +70,8 @@ button:hover {
 .bar {
     width: 15px;
     display: inline-block;
-    background-color: rgb(211, 69, 100);
+    border: 2px dashed rgb(235, 71, 107);
     height: 3px;
     margin: 0px 2px;
+    background-color: rgb(83, 83, 117);
 }

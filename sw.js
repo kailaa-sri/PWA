@@ -48,9 +48,9 @@ self.addEventListener('fetch', function(event) {
             } catch (error) {
                 console.log('[Service Worker] Fetch failed; returning offline page instead.', error);
 
-                //const cache = await caches.open(CACHE_NAME);
-                //const cachedResponse = await cache.match(OFFLINE_URL);
-                //return cachedResponse;
+                const cache = await caches.open(CACHE_NAME);
+                const cachedResponse = await cache.match(OFFLINE_URL);
+                return cachedResponse;
             }
         })());
     }

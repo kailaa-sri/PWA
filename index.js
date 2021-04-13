@@ -87,25 +87,19 @@ window.onload = function() {
         document.querySelectorAll('.bar').forEach(function(a) {
             a.remove();
         });
-        var min = dataset[0];
 
-        dataset.forEach(element => {
-            if (element < min) { min = element; }
-            console.log()
-
-        });
 
         dataset.forEach(element => {
 
 
             element = (element - dataset.min) / (dataset.max - dataset.min);
-            console.log("min:" + min + "element:" + element);
+            console.log("min:" + dataset.min + "element:" + element);
             //normalize(element, Math.max(dataset), Math.min(dataset));
         });
         d3.select("h4")
             .data(dataset)
             .enter()
-            .append("div").attr('class', 'bar').style("height", (d) => (d % 10000 + "px")).style("margin", 1);
+            .append("div").attr('class', 'bar').style("height", (d) => (d * 1000 + "px")).style("margin", 1);
 
     }
 

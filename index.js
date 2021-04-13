@@ -58,8 +58,8 @@ window.onload = function() {
     setInterval(function() { getcpuinfo(); }, 2000);
 
     function getcpuinfo() {
-        if (browser.runtime.lastError) {
-            console.error(browser.runtime.lastError);
+        if (runtime.lastError) {
+            console.error(runtime.lastError);
         } else {
             chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" },
                 function(response) {

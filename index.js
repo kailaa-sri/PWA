@@ -72,9 +72,9 @@ window.onload = function() {
     }
 
     function Displaygraph(dataset) {
-        dataset.forEach(element => {
-            normalize(element, 100, 50);
-        });
+        /*dataset.forEach(element => {
+            element = normalize(element, 100, 50);
+        });*/
 
     }
     d3.select("h4")
@@ -83,4 +83,4 @@ window.onload = function() {
         .append("div").attr('class', 'bar').style("height", (d) => d * 55).style("margin", 1);
 }
 
-function normalize(val, max, min) { return (val - min) / (max - min); }
+//function normalize(val, max, min) { return (val - min) / (max - min); }

@@ -105,6 +105,10 @@ window.onload = function() {
         data,
         options: {}
     };
+    var myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
 
     function Displaygraph(dataset) {
 

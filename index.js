@@ -65,43 +65,43 @@ window.onload = function() {
                 else {
                     console.log(response.reply);
                     dataset.push(response.reply);
-                    Displaygraph(dataset);
+                    //Displaygraph(dataset);
 
                 }
             });
     }
 
-    function Displaygraph(dataset) {
-
-        const labels = [
-            'January',
-            'February',
-            'March',
-            'April',
-            'May',
-            'June',
-        ];
-        const data = {
-
-            datasets: [{
-                label: 'Utilization',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: dataset,
-            }]
-        };
-        const config = {
-            type: 'line',
-            data,
-            options: {}
-        };
 
 
-        var myChart = new Chart(
-            document.getElementById('myChart'),
-            config
-        );
-    }
+    const labels = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+    ];
+    const data = {
+
+        datasets: [{
+            label: 'Utilization',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: dataset,
+        }]
+    };
+    const config = {
+        type: 'line',
+        data,
+        options: {}
+    };
+
+
+    var myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
 
 
 

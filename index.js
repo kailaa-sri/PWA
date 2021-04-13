@@ -81,7 +81,7 @@ window.onload = function() {
             'June',
         ];
         const data = {
-            labels: labels,
+
             datasets: [{
                 label: 'Utilization',
                 backgroundColor: 'rgb(255, 99, 132)',

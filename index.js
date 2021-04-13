@@ -85,32 +85,6 @@ window.onload = function() {
 
     }
 
-    const config = {
-        type: 'line',
-        data: {
-            datasets: [{
-                borderColor: "#FF3212",
-                borderWidth: 1,
-                radius: 0,
-                data: data,
-            }]
-        },
-        options: {
-            animation,
-            interaction: {
-                intersect: false
-            },
-            plugins: {
-                legend: false
-            },
-            scales: {
-                x: {
-                    type: 'linear'
-                }
-            }
-        }
-    };
-
 
     const totalDuration = 10000;
     const delayBetweenPoints = totalDuration / data.length;
@@ -143,6 +117,33 @@ window.onload = function() {
             }
         }
     };
+
+    const config = {
+        type: 'line',
+        data: {
+            datasets: [{
+                borderColor: "#FF3212",
+                borderWidth: 1,
+                radius: 0,
+                data: data,
+            }]
+        },
+        options: {
+            animation,
+            interaction: {
+                intersect: false
+            },
+            plugins: {
+                legend: false
+            },
+            scales: {
+                x: {
+                    type: 'linear'
+                }
+            }
+        }
+    };
+
 
 
 

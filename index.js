@@ -58,20 +58,24 @@ window.onload = function() {
     setInterval(function() { getcpuinfo(); }, 2000);
 
     function getcpuinfo() {
-        chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" },
-            function(response) {
-                if (!response.reply)
-                    console.log("no messgae reply ");
-                else {
-                    console.log(response.reply);
-                    dataset.push(response.reply);
-                    Displaygraph(dataset);
-                    if (dataset.length > 20) {
-                        dataset = [];
-                    }
+        try {
+            chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" },
+                function(response) {
+                    if (!response.reply)
+                        console.log("no messgae reply ");
+                    else {
+                        console.log(response.reply);
+                        dataset.push(response.reply);
+                        Displaygraph(dataset);
+                        if (dataset.length > 20) {
+                            dataset = [];
+                        }
 
-                }
-            });
+                    }
+                });
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     function Displaygraph(dataset) {
@@ -83,6 +87,7 @@ window.onload = function() {
 
         dataset.forEach(element => {
             if (element < min) { min = element; }
+            console.log()
 
         });
 

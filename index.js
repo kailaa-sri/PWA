@@ -51,7 +51,7 @@ window.onload = function() {
     }
 
     var editorExtensionId = "libpmdgfhliebpigepnppcjgpdnphcpm";
-    var dataset = 0;
+    var dataset = [];
     // Make a simple request:
 
     getcpuinfo();
@@ -72,45 +72,35 @@ window.onload = function() {
     }
 
     function Displaygraph(cpu) {
+        const labels = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+        ];
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Processor1',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: dataset,
+            }]
+        };
+        const config = {
+            type: 'line',
+            data,
+            options: {}
+        };
 
 
-        d3.select("div")
-            .data(cpu)
-            .enter()
-            .addEventListener("div")
-            .attr("class", "bar")
-            .style("height", (d) => (d * 100 + "px"))
-
+        var myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
     }
-
-    const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-    ];
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45],
-        }]
-    };
-    const config = {
-        type: 'line',
-        data,
-        options: {}
-    };
-
-
-    var myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
 
 
 

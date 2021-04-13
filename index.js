@@ -75,12 +75,13 @@ window.onload = function() {
         /*dataset.forEach(element => {
             element = normalize(element, 100, 50);
         });*/
+        d3.select("h4")
+            .data(dataset)
+            .enter()
+            .append("div").attr('class', 'bar').style("height", (d) => d * 55).style("margin", 1);
 
     }
-    d3.select("h4")
-        .data(dataset)
-        .enter()
-        .append("div").attr('class', 'bar').style("height", (d) => d * 55).style("margin", 1);
+
 }
 
 //function normalize(val, max, min) { return (val - min) / (max - min); }

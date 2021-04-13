@@ -128,7 +128,9 @@ window.onload = function() {
             .data(dataset)
             .enter()
             .append("div").attr('class', 'bar').style("height", (d) => ((d % 100) * 40 + "px")).style("margin", 1);
-        if (myChart) { myChart.destroy(); }
+        document.getElementById("myChart").remove();
+        chart = document.createElement("canvas").attributes("id", "mychart");
+        document.appendChild(chart);
         var myChart = new Chart(
             document.getElementById('myChart'),
             config

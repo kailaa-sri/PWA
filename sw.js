@@ -2,7 +2,7 @@ const CACHE_NAME = 'offline';
 const OFFLINE_URL = 'offline.html';
 
 self.addEventListener('install', function(event) {
-    console.log('[ServiceWorker] Install');
+    //console.log('[ServiceWorker] Install');
 
     event.waitUntil((async() => {
         const cache = await caches.open(CACHE_NAME);
@@ -17,7 +17,7 @@ self.addEventListener('install', function(event) {
 
 
 self.addEventListener('activate', (event) => {
-    console.log('[ServiceWorker] Activate');
+    //console.log('[ServiceWorker] Activate');
     event.waitUntil((async() => {
         // Enable navigation preload if it's supported.
         // See https://developers.google.com/web/updates/2017/02/navigation-preload

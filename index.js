@@ -5,16 +5,16 @@ window.onload = function() {
         window.addEventListener('load', function() {
             navigator.serviceWorker.register('/sw.js').then(function(registration) {
 
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                //console.log('ServiceWorker registration successful with scope: ', registration.scope);
             }, function(err) {
 
-                console.log('ServiceWorker registration failed: ', err);
+                //console.log('ServiceWorker registration failed: ', err);
             });
         });
     }
     var installed = 0;
     window.addEventListener('appinstalled', (event) => {
-        console.log('👍', 'appinstalled', event);
+        //console.log('👍', 'appinstalled', event);
         installed = 1;
         document.getElementById("promotion").classList.add("hidden");
         // Clear the deferredPrompt so it can be garbage collected
@@ -22,7 +22,7 @@ window.onload = function() {
     });
     if (installed == 0) {
         window.addEventListener('beforeinstallprompt', (event) => {
-            console.log('👍', 'beforeinstallprompt', event);
+            //console.log('👍', 'beforeinstallprompt', event);
             // Stash the event so it can be triggered later.
             window.deferredPrompt = event;
             // Remove the 'hidden' class from the install button container
@@ -31,7 +31,7 @@ window.onload = function() {
         });
         var inst = document.getElementById("Install");
         inst.addEventListener('click', async() => {
-            console.log('👍', 'butInstall-clicked');
+            //console.log('👍', 'butInstall-clicked');
             const promptEvent = window.deferredPrompt;
             if (!promptEvent) {
                 // The deferred prompt isn't available.
@@ -67,7 +67,7 @@ window.onload = function() {
                     if (!response)
                         console.log("no messgae reply ");
                     else {
-                        console.log(response.reply);
+
                         dataset.push(response.reply);
                         Displaygraph(dataset);
                         if (dataset.length > 15) {

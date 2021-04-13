@@ -57,7 +57,7 @@ window.onload = function() {
     // Make a simple request:
 
     getcpuinfo();
-    setInterval(function() { getcpuinfo(); }, 2000);
+    setInterval(function() { getcpuinfo(); }, 3000);
 
     function getcpuinfo() {
 

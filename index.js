@@ -70,8 +70,9 @@ window.onload = function() {
                         console.log(response.reply);
                         dataset.push(response.reply);
                         Displaygraph(dataset);
-                        if (dataset.length > 20) {
-                            dataset = [];
+                        if (dataset.length > 15) {
+                            dataset.shift();
+                            dataset.shift();
                         }
 
                     }

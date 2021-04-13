@@ -61,9 +61,9 @@ window.onload = function() {
 
         chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" },
             function(response) {
-                if (chrome.runtime.lastError) {
-                    console.error(chrome.runtime.lastError);
-                } else {
+                if (!chrome.runtime.lastError) {
+
+
                     if (!response)
                         console.log("no messgae reply ");
                     else {

@@ -82,26 +82,7 @@ window.onload = function() {
     }
 
 
-    function Displaygraph(dataset) {
 
-        document.querySelectorAll('.bar').forEach(function(a) {
-            a.remove();
-        });
-
-
-        dataset.forEach(element => {
-
-
-            element = (element - dataset.min) / (dataset.max - dataset.min);
-            console.log("min:" + dataset.min + "element:" + element);
-            //normalize(element, Math.max(dataset), Math.min(dataset));
-        });
-        d3.select("h4")
-            .data(dataset)
-            .enter()
-            .append("div").attr('class', 'bar').style("height", (d) => ((d % 100) * 40 + "px")).style("margin", 1);
-
-    }
     const labels = [
         'January',
         'February',
@@ -124,9 +105,28 @@ window.onload = function() {
         data,
         options: {}
     };
-    var myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
 
+    function Displaygraph(dataset) {
+
+        document.querySelectorAll('.bar').forEach(function(a) {
+            a.remove();
+        });
+
+
+        dataset.forEach(element => {
+
+
+            element = (element - dataset.min) / (dataset.max - dataset.min);
+            console.log("min:" + dataset.min + "element:" + element);
+            //normalize(element, Math.max(dataset), Math.min(dataset));
+        });
+        d3.select("h4")
+            .data(dataset)
+            .enter()
+            .append("div").attr('class', 'bar').style("height", (d) => ((d % 100) * 40 + "px")).style("margin", 1);
+        var myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    }
 }

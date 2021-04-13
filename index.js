@@ -73,7 +73,7 @@ window.onload = function() {
 
     function Displaygraph(cpu) {
         var oldcanv = document.getElementById('myChart');
-        document.removeChild(oldcanv)
+        document.removeChild(oldcanv);
         const labels = [
             'January',
             'February',

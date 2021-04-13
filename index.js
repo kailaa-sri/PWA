@@ -86,7 +86,7 @@ window.onload = function() {
         dataset.forEach(element => {
 
 
-            element = ((val - min) / (max - min)) + 1;
+            element = ((element - min) / (element - min)) + 1;
             //normalize(element, Math.max(dataset), Math.min(dataset));
         });
         d3.select("h4")

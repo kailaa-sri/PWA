@@ -1,4 +1,16 @@
 window.onload = function() {
+    self.addEventListener("activate", event => {
+        event.waitUntil(async function() {
+            // Feature-detect 
+            if (self.registration.navigationPreload) {
+                // Enable navigation preloads! 
+                console.log("Enable navigation preloads!");
+                await self.registration.navigationPreload.enable();
+            }
+            return;
+        });
+    });
+
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
             navigator.serviceWorker.register('/sw.js').then(function(registration) {

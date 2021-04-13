@@ -90,12 +90,13 @@ window.onload = function() {
 
 
             element = element - min;
+            console.log("min:" + min + "element:" + element);
             //normalize(element, Math.max(dataset), Math.min(dataset));
         });
         d3.select("h4")
             .data(dataset)
             .enter()
-            .append("div").attr('class', 'bar').style("height", (d) => (d * 22 + "px")).style("margin", 1);
+            .append("div").attr('class', 'bar').style("height", (d) => (d + "px")).style("margin", 1);
 
     }
 

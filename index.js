@@ -97,7 +97,7 @@ window.onload = function() {
         d3.select("h4")
             .data(dataset)
             .enter()
-            .append("div").attr('class', 'bar').style("height", (d) => (d + "px")).style("margin", 1);
+            .append("div").attr('class', 'bar').style("height", (d) => (d * 999999 + "px")).style("margin", 1);
 
     }
 }

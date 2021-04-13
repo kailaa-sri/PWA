@@ -72,6 +72,8 @@ window.onload = function() {
     }
 
     function Displaygraph(dataset) {
+        el = document.getElementsByClassName("bar");
+        el.parentNode.removeChild(el);
         dataset.forEach(element => {
 
             element = normalize(element, Math.max(dataset), Math.min(dataset));

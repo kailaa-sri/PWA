@@ -89,7 +89,7 @@ window.onload = function() {
         type: 'line',
         data: {
             datasets: [{
-                borderColor: Utils.CHART_COLORS.red,
+                borderColor: "#FF3212",
                 borderWidth: 1,
                 radius: 0,
                 data: data,

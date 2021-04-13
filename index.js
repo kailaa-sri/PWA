@@ -81,35 +81,6 @@ window.onload = function() {
 
     }
 
-
-
-    const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-    ];
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'CPU performance',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: dataset,
-        }]
-    };
-    const config = {
-        type: 'line',
-        data,
-        options: {}
-    };
-    var myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
-
     function Displaygraph(dataset) {
 
         document.querySelectorAll('.bar').forEach(function(a) {
@@ -128,14 +99,6 @@ window.onload = function() {
             .data(dataset)
             .enter()
             .append("div").attr('class', 'bar').style("height", (d) => ((d % 100) * 40 + "px")).style("margin", 1);
-        document.getElementById("myChart").remove();
 
-        g = document.createElement('canvas');
-        g.setAttribute("id", "myChart");
-        document.appendChild(g);
-        var myChart = new Chart(
-            document.getElementById('myChart'),
-            config
-        );
     }
 }

@@ -1,15 +1,5 @@
 window.onload = function() {
-    self.addEventListener("activate", event => {
-        event.waitUntil(async function() {
-            // Feature-detect 
-            if (self.registration.navigationPreload) {
-                // Enable navigation preloads! 
-                console.log("Enable navigation preloads!");
-                await self.registration.navigationPreload.enable();
-            }
-            return;
-        });
-    });
+
 
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
@@ -74,8 +64,6 @@ window.onload = function() {
         chrome.runtime.sendMessage(editorExtensionId, { msg: "send cpu processor info" },
             function(response) {
                 if (!chrome.runtime.lastError) {
-
-
                     if (!response)
                         console.log("no messgae reply ");
                     else {
@@ -116,7 +104,7 @@ window.onload = function() {
         d3.select("h4")
             .data(dataset)
             .enter()
-            .append("div").attr('class', 'bar').style("height", (d) => (d + "px")).style("margin", 1);
+            .append("div").attr('class', 'bar').style("height", (d) => (d * 10000 + "px")).style("margin", 1);
 
     }
 

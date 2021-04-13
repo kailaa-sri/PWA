@@ -89,4 +89,7 @@ window.onload = function() {
 
 }
 
-function normalize(val, max, min) { return ((val - min) / (max - min)) + 1; }
+function normalize(val, max, min) {
+    console.log(((val - min) / (max - min)) + 1);
+    return ((val - min) / (max - min)) + 1;
+}

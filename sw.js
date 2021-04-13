@@ -33,7 +33,7 @@ self.addEventListener('activate', (event) => {
     self.clients.claim();
 });
 
-self.addEventListener('fetch', function(event) {
+/*self.addEventListener('fetch', function(event) {
     // console.log('[Service Worker] Fetch', event.request.url);
     if (event.request.mode === 'navigate') {
         event.respondWith((async() => {
@@ -54,4 +54,4 @@ self.addEventListener('fetch', function(event) {
             }
         })());
     }
-});
+});*/

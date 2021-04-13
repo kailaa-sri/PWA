@@ -72,7 +72,10 @@ window.onload = function() {
     }
 
     function Displaygraph(dataset) {
-        d3.select("div").data(dataset).enter().append("div").style("height", (d) => d * 100);
+        d3.select("body").selectAll("div")
+            .data(dataset)
+            .enter()
+            .append("div").attr('class', 'bar').style("height", (d) => d * 5).style("margin", 1);
     }
 
 

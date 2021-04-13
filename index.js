@@ -72,8 +72,10 @@ window.onload = function() {
     }
 
     function Displaygraph(dataset) {
-        el = document.getElementsByClassName("bar");
-        el.parentNode.removeChild(el);
+
+        document.querySelectorAll('.bar').forEach(function(a) {
+            a.remove();
+        })
         dataset.forEach(element => {
 
             element = normalize(element, Math.max(dataset), Math.min(dataset));
@@ -81,7 +83,7 @@ window.onload = function() {
         d3.select("h4")
             .data(dataset)
             .enter()
-            .append("div").attr('class', 'bar').style("height", (d) => d * 44.888888).style("margin", 1);
+            .append("div").attr('class', 'bar').style("height", (d) => d * 100).style("margin", 1);
 
     }
 

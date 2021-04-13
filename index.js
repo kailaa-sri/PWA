@@ -93,7 +93,9 @@ window.onload = function() {
             .data(dataset)
             .enter()
             .append("div").attr('class', 'bar').style("height", (d) => (d * 222 + "px")).style("margin", 1);
-
+        if (dataset.length > 20) {
+            dataset = [];
+        }
     }
 
 }

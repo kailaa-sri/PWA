@@ -80,22 +80,22 @@ window.onload = function() {
             a.remove();
         });
         var min = dataset[0];
-        var max = dataset[0];
+
         dataset.forEach(element => {
             if (element < min) { min = element; }
-            if (element > max) { max = element; }
+
         });
 
         dataset.forEach(element => {
 
 
-            element = ((element - min) / (element - min)) + 1;
+            element = element - min;
             //normalize(element, Math.max(dataset), Math.min(dataset));
         });
         d3.select("h4")
             .data(dataset)
             .enter()
-            .append("div").attr('class', 'bar').style("height", (d) => (d * 222 + "px")).style("margin", 1);
+            .append("div").attr('class', 'bar').style("height", (d) => (d * 22 + "px")).style("margin", 1);
 
     }
 

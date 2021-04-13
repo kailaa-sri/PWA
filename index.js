@@ -75,7 +75,7 @@ window.onload = function() {
         d3.select("body").selectAll("div")
             .data(dataset)
             .enter()
-            .append("div").attr('class', 'bar').style("height", (d) => d * 5).style("margin", 1);
+            .append("div").attr('class', 'bar').style("height", (d) => d * 55).style("margin", 1);
     }
 
 

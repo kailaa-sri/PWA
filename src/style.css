@@ -68,9 +68,9 @@ button:hover {
 }
 
 .bar {
-    width: 10px;
+    width: 15px;
     display: inline-block;
     background-color: rgb(211, 69, 100);
     height: 3px;
-    margin: 0px 5px;
+    margin: 0px 2px;
 }

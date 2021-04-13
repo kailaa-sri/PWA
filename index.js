@@ -71,9 +71,8 @@ window.onload = function() {
             });
     }
 
-    function Displaygraph(cpu) {
-        var oldcanv = document.getElementById('myChart');
-        document.getElementsByTagName("div")[1].removeChild(oldcanv);
+    function Displaygraph(dataset) {
+
         const labels = [
             'January',
             'February',

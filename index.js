@@ -83,7 +83,7 @@ window.onload = function() {
         const data = {
             labels: labels,
             datasets: [{
-                label: 'Processor1',
+                label: 'Utilization',
                 backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
                 data: dataset,

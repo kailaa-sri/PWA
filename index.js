@@ -88,16 +88,10 @@ window.onload = function() {
         });
 
 
-        dataset.forEach(element => {
-
-
-            element = (element / dataset[0]) * 100000;
-            //normalize(element, Math.max(dataset), Math.min(dataset));
-        });
         d3.select("h4")
             .data(dataset)
             .enter()
-            .append("div").attr('class', 'bar').style("height", (d) => (d * 999999 + "px")).style("margin", 1);
+            .append("div").attr('class', 'bar').style("height", (d) => (d * 10000 + "px")).style("margin", 1);
 
     }
 }
